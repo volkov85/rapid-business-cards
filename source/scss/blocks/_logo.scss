@@ -1,0 +1,19 @@
+.logo {
+  display: block;
+  width: 90px;
+  height: 36px;
+
+  @media (min-width: $widthMobileIphone) {
+    width: 100px;
+    height: 40px;
+  }
+
+  @media (min-width: $widthTablet) {
+    width: 125px;
+    height: 50px;
+
+    .page--finished & {
+      filter: brightness(0) invert(1);
+    }
+  }
+}

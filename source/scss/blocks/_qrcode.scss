@@ -1,0 +1,62 @@
+.qrcode {
+  display: none;
+
+  @media (min-width: $widthTablet) {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    align-items: center;
+    margin-top: 21px;
+    margin-right: 18px;
+    margin-bottom: 40px;
+  }
+
+  @media (min-width: $widthDesktop) {
+    .page--review & {
+      margin-top: -7px;
+    }
+  }
+}
+
+.qrcode__image {
+  margin-bottom: 9px;
+}
+
+.qrcode__description {
+  width: 240px;
+  margin: 0;
+  margin-bottom: 13px;
+  font-size: $fontTextQRCode;
+  line-height: $lineHeightSmall;
+  color: $fontColorHeadersBlack;
+  text-align: center;
+}
+
+.qrcode__badges {
+  display: flex;
+  justify-content: space-between;
+  width: 225px;
+}
+
+.qrcode__badge {
+  transition:
+    filter 0.1s,
+    transform 0.1s;
+
+  img {
+    display: block;
+  }
+
+  &:hover {
+    filter: drop-shadow(2px 12px 15px rgba($fontColorHeadersBlack, 0.2));
+  }
+
+  &:active {
+    filter: none;
+    transform: translate(1px, 1px);
+  }
+
+  &:focus {
+    outline: none;
+  }
+}

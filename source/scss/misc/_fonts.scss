@@ -1,0 +1,42 @@
+$fontBase: "Karla", "Arial", sans-serif;
+$fontSecondary: "Roboto", "Arial", sans-serif;
+$fontThird: "SF Pro Display", "Arial", sans-serif;
+
+$fontHeadersH1: 32px;
+$fontHeadersH2: 24px;
+$fontHeadersH3: 18px;
+
+$fontTextTiny: 10px;
+$fontTextSmall: 12px;
+$fontTextRegular: 14px;
+$fontTextMedium: 16px;
+$fontTextLarge: 20px;
+
+$fontTextQRCode: 13px;
+$fontTextHeader: 18px;
+
+$lineHeightSmall: 15px;
+$lineHeightRegular: 16px;
+$lineHeightMedium: 17px;
+$lineHeightLarge: 19px;
+$lineHeightHuge: 22px;
+
+$lineHeightH1: 38px;
+$lineHeightH2: 29px;
+$lineHeightH3: 24px;
+$lineHeightH4: 21px;
+
+$fontRegular: 400;
+$fontBold: 700;
+$fontHeavy: 800;
+
+$fontColorHeaders: #ffffff;
+$fontColorHeadersBlack: #000000;
+$fontColorMaintext: #979797;
+$fontColorBlue: #6369ff;
+$fontColorPlaceholder: #ababb7;
+
+// Подключаем шрифт SF Pro Display
+@include font-face("SF Pro Display", "Regular");
+@include font-face("SF Pro Display", "Bold", $fontBold);
+@include font-face("SF Pro Display", "Heavy", $fontHeavy);

@@ -1,0 +1,68 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 32px;
+  padding: 20px 16px 0;
+
+  @media (min-width: $widthMobileIphone) {
+    margin-bottom: 32px;
+    padding-top: 20px;
+    padding-right: 12px;
+  }
+
+  @media (min-width: $widthTablet) {
+    margin-bottom: 0;
+    padding: 50px 70px 0 85px;
+  }
+}
+
+.header__link {
+  position: relative;
+  width: 151px;
+  margin-top: 5px;
+  padding-left: 22px;
+  font-family: $fontSecondary;
+  color: $fontColorBlue;
+  letter-spacing: 0.02em;
+  transition: opacity 0.3s;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    background: url("../img/icon-play.svg") center / contain no-repeat;
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 1;
+  }
+
+  @media (min-width: $widthMobileIphone) {
+    margin-top: 7px;
+  }
+
+  @media (min-width: $widthTablet) {
+    width: auto;
+    margin-top: 14px;
+    padding-left: 40px;
+    font-size: $fontTextHeader;
+    line-height: 1.4;
+    color: $fontColorHeaders;
+
+    &::before {
+      top: -5px;
+      width: 32px;
+      height: 32px;
+      filter: brightness(0) invert(1);
+    }
+  }
+}

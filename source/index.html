@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Rapid Business Cards</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Karla&family=Roboto&display=swap">
+    <link rel="stylesheet" href="css/style.min.css?v=1.19">
+  </head>
+  <body class="page page--index">
+    <header class="header">
+      <img class="logo" src="img/logo.svg" alt="Rapid logotype" width="125" height="50">
+    </header>
+    <main class="container">
+      <section class="card">
+        <div class="card__wrapper">
+          <div class="card__info">
+            <div class="card__person">
+              <div class="card__photo" style="background-image: url('img/photo.jpg')"></div>
+              <div class="card__heading">
+                <h2 class="card__name">Dean Dannary</h2>
+                <h3 class="card__occupation">Founder at DigitalDesign.NYC</h3>
+              </div>
+            </div>
+            <p class="card__description">
+              With a keen eye for entrepreneurship, Anjelika Kour (@globalnewyorker) founded DigitalDesign.NYC, a New York-based web and mobile design and development agency specializing in UI/UX for apps and SEO-first web.
+              <a href="javascript:showMore()">See more</a>
+            </p>
+          </div>
+          <div class="card__contacts">
+            <div class="card__contacts-wrapper">
+              <span class="card__label">Email</span>
+              <a class="card__contacts-link" href="mailto:d_dannary@digitaldesign.nyc">anjelika@digitaldesign.nyc</a>
+            </div>
+            <div class="card__contacts-wrapper">
+              <span class="card__label">Mobile</span>
+              <a class="card__contacts-link" href="tel:+1 917-376-5903">+1 917-376-5903</a>
+            </div>
+            <div class="card__contacts-wrapper">
+              <span class="card__label">Work</span>
+              <a class="card__contacts-link" href="tel:+1 212-380-1761">+1 212-380-1761</a>
+            </div>
+            <div class="card__contacts-wrapper">
+              <span class="card__label">Website</span>
+              <a class="card__contacts-link" href="https://www.digitaldesign.nyc" target="_blank">www.digitaldesign.nyc</a>
+            </div>
+            <div class="card__social">
+              <a href="#" class="card__social-link card__social-link--linkedin" target="_blank">
+                <span class="visually-hidden">LinkedIn</span>
+              </a>
+              <a href="#" class="card__social-link card__social-link--instagram" target="_blank">
+                <span class="visually-hidden">Instagram</span>
+              </a>
+              <a href="#" class="card__social-link card__social-link--facebook" target="_blank">
+                <span class="visually-hidden">Facebook</span>
+              </a>
+              <a href="#" class="card__social-link card__social-link--twitter" target="_blank">
+                <span class="visually-hidden">Twitter</span>
+              </a>
+            </div>
+          </div>
+          <div class="card__buttons">
+            <button class="button button--alt" type="button">Open in Rapid</button>
+            <button class="button card__button-save" type="button">Save card</button>
+          </div>
+        </div>
+        <div class="card__share">
+          <div class="card__share-person">
+            <div class="card__share-photo" style="background-image: url('img/photo-share.jpg')"></div>
+            <h2 class="card__share-name">Dean Dannary</h2>
+            <p class="card__share-occupation">Founder at DigitalDesign.NYC</p>
+          </div>
+          <div class="card__share-placeholder">
+            <img src="img/placeholder.svg" alt="Card placeholder" width="248" height="253">
+          </div>
+        </div>
+      </section>
+      <aside class="qrcode">
+        <img class="qrcode__image" src="img/qr-code.svg" alt="QR Code" width="280" height="280">
+        <p class="qrcode__description">Add a business card to Rapid using the QR code</p>
+        <div class="qrcode__badges">
+          <a class="qrcode__badge" href="#" target="_blank">
+            <img src="img/app_store_badge.svg" alt="App Store link" width="108" height="32">
+          </a>
+          <a class="qrcode__badge" href="#" target="_blank">
+            <img src="img/google-play-badge.svg" alt="Google Play link" width="108" height="32">
+          </a>
+        </div>
+      </aside>
+    </main>
+    <section class="form">
+      <form action="#" method="post" class="form__wrapper">
+        <div class="form__save">
+          <div class="form__heading">
+            <h2 class="form__title">Save this business card</h2>
+            <p class="form__description">Enter your phone number or email and we will send it to you.</p>
+          </div>
+          <div class="form__fields">
+            <div class="form__field">
+              <input type="text" name="contacts" placeholder="Phone number or email" aria-label="Phone number or email" required>
+            </div>
+          </div>
+          <div class="form__buttons">
+            <button class="button button--single" type="button">Save card</button>
+          </div>
+        </div>
+        <div class="form__share">
+          <div class="form__heading">
+            <h2 class="form__title">Let’s network!</h2>
+            <p class="form__description">Share your contact info with Dean, and he will get it in the RAPID  app.</p>
+          </div>
+          <div class="form__fields">
+            <div class="form__field">
+              <input type="text" name="name" placeholder="Name" aria-label="Name" required>
+            </div>
+            <div class="form__field">
+              <input type="text" name="contacts" placeholder="Phone number or email" aria-label="Phone number or email" required>
+            </div>
+            <div class="form__field">
+              <textarea name="note" placeholder="Note" aria-label="Note"></textarea>
+            </div>
+          </div>
+          <div class="form__buttons">
+            <button class="button form__button-share" type="button">Share contact</button>
+            <button class="button button--string form__button-later" type="button">Connect Later</button>
+          </div>
+        </div>
+      </form>
+      <button class="form__close" type="button">
+        <span class="visually-hidden">Close</span>
+      </button>
+    </section>
+    <div class="overlay"></div>
+    <script src="js/script.min.js?v=1.19"></script>
+  </body>
+</html>

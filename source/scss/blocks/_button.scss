@@ -1,0 +1,72 @@
+.button {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 128px;
+  height: 40px;
+  padding: 11px;
+  font-family: $fontThird;
+  font-weight: $fontBold;
+  font-size: $fontTextRegular;
+  line-height: $lineHeightMedium;
+  color: $fontColorHeaders;
+  vertical-align: middle;
+  text-align: center;
+  border: none;
+  background-color: $ColorSecondary;
+  border-radius: 64px;
+  cursor: pointer;
+  transition:
+    box-shadow 0.1s,
+    transform 0.1s;
+  appearance: none;
+
+  @media (min-width: $widthMobileIphone) {
+    width: 138px;
+  }
+
+  .card__buttons & {
+    @media (min-width: $widthTablet) {
+      width: 155px;
+      height: 48px;
+    }
+  }
+
+  &:hover {
+    box-shadow: 2px 12px 15px rgba($ColorSecondary, 0.2);
+  }
+
+  &:active {
+    box-shadow: none;
+    transform: translate(1px, 1px);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:disabled {
+    cursor: default;
+  }
+}
+
+.button--string {
+  width: 130px;
+  background: none;
+  color: $fontColorBlue;
+
+  &:hover,
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+.button--alt {
+  background-color: $ColorButtonAlt;
+  color: $fontColorBlue;
+
+  .card__buttons & {
+    @media (min-width: $widthTablet) {
+      display: none;
+    }
+  }
+}

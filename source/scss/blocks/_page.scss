@@ -1,0 +1,49 @@
+.page {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: $widthMobile;
+  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
+  margin: 0;
+  font: #{$fontTextRegular}/#{$lineHeightRegular} $fontBase;
+  color: $fontColorMaintext;
+  background:
+    url("../img/bg-big.svg") -105px -125px / 293px no-repeat,
+    url("../img/bg-small.svg") right -144px bottom calc(50% - 327px) / 255px no-repeat $ColorPrimary;
+  -webkit-tap-highlight-color: transparent;
+
+  &--finished {
+    background-color: $ColorPrimary;
+
+    .container {
+      flex-grow: initial;
+    }
+
+    .header {
+      margin-bottom: 20px;
+    }
+  }
+
+  @media (min-width: $widthMobileIphone) {
+    background-position:
+      -105px -125px,
+      right -121px bottom -148px;
+  }
+
+  @media (min-width: $widthTablet) {
+    background-position:
+      -179px -300px,
+      right -140px bottom -163px;
+    background-size:
+      760px,
+      315px;
+
+    &--finished {
+      background-color: #6369fd;
+      background-image:
+        url("../img/bg-big-white.svg"),
+        url("../img/bg-small-white.svg");
+    }
+  }
+}

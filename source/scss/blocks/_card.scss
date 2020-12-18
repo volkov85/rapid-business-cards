@@ -1,0 +1,351 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  min-height: calc(100% - 72px - 12px);
+
+  @media (min-width: $widthTablet) {
+    flex-direction: row;
+    flex-grow: 0;
+    flex-shrink: 0;
+    align-items: flex-start;
+    width: 612px;
+    min-height: initial;
+  }
+}
+
+.card__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+  box-sizing: border-box;
+  padding: 12px 12px 20px;
+  background-color: $ColorPrimary;
+  border-radius: 8px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.13);
+
+  @media (min-width: $widthMobileIphone) {
+    padding: 16px;
+  }
+
+  @media (min-width: $widthTablet) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-grow: 0;
+    width: 100%;
+    padding: 40px;
+
+    &--hidden {
+      display: none;
+      animation: 0.3s both fade-out;
+    }
+  }
+}
+
+.card__info {
+  margin-top: -28px;
+  margin-bottom: 15px;
+
+  @media (min-width: $widthMobileIphone) {
+    margin-top: -32px;
+  }
+
+  @media (min-width: $widthTablet) {
+    width: 280px;
+    margin-top: -100px;
+    margin-bottom: 40px;
+
+    .page--review & {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.card__person {
+  display: flex;
+  align-items: center;
+  margin-bottom: 13px;
+
+  @media (min-width: $widthMobileIphone) {
+    margin-bottom: 17px;
+  }
+
+  @media (min-width: $widthTablet) {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 11px;
+  }
+}
+
+.card__photo {
+  flex-shrink: 0;
+  width: 112px;
+  height: 112px;
+  margin-right: 12px;
+  background-position: center;
+  background-size: cover;
+  border-radius: 8px;
+
+  @media (min-width: $widthMobileIphone) {
+    width: 120px;
+    height: 120px;
+    margin-right: 16px;
+  }
+
+  @media (min-width: $widthTablet) {
+    width: 180px;
+    height: 180px;
+    margin-right: 0;
+    margin-bottom: 29px;
+  }
+}
+
+.card__heading {
+  margin-top: 6px;
+
+  @media (min-width: $widthTablet) {
+    margin-top: 0;
+    margin-bottom: 1px;
+  }
+}
+
+.card__name {
+  margin: 0;
+  margin-bottom: 4px;
+  font-weight: $fontBold;
+  font-size: $fontHeadersH3;
+  line-height: $lineHeightH4;
+  color: $fontColorBlue;
+
+  @media (min-width: $widthTablet) {
+    margin-bottom: 8px;
+  }
+}
+
+.card__occupation {
+  margin: 0;
+  font-weight: $fontRegular;
+  font-size: $fontTextMedium;
+  line-height: $lineHeightLarge;
+  color: $fontColorHeadersBlack;
+}
+
+.card__description {
+  position: relative;
+  margin: 0;
+  height: 32px;
+  overflow: hidden;
+
+  a {
+    // position: absolute;
+    // right: 10px;
+    // bottom: 0;
+    // padding-left: 10px;
+    display: none;
+    color: $ColorSecondary;
+  }
+
+  @media (min-width: $widthTablet) {
+    height: auto;
+    overflow: visible;
+  }
+}
+
+.card__contacts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 18px;
+
+  @media (min-width: $widthMobileIphone) {
+    max-height: 243px;
+    margin-bottom: 10px;
+  }
+
+  @media (min-width: $widthTablet) {
+    width: 225px;
+    margin-top: 9px;
+    margin-bottom: 0;
+  }
+}
+
+.card__contacts-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+  text-align: center;
+
+  @media (min-width: $widthMobileIphone) {
+    margin-bottom: 10px;
+  }
+}
+
+.card__label {
+  margin-bottom: -1px;
+  font-size: $fontTextSmall;
+  line-height: $lineHeightSmall;
+  color: $fontColorBlue;
+}
+
+.card__contacts-link {
+  font-size: $fontTextMedium;
+  line-height: $lineHeightLarge;
+  color: $fontColorHeadersBlack;
+  transition: opacity 0.3s;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 1;
+  }
+}
+
+.card__social {
+  display: flex;
+  justify-content: space-between;
+  width: 170px;
+  margin-top: 4px;
+  margin-right: 10px;
+
+  @media (min-width: $widthMobileIphone) {
+    margin-top: auto;
+    margin-right: 0;
+  }
+
+  @media (min-width: $widthTablet) {
+    margin-top: 10px;
+  }
+}
+
+.card__social-link {
+  width: 30px;
+  height: 30px;
+  background: center / contain no-repeat;
+  transition: opacity 0.3s;
+
+  @each $icon in linkedin, instagram, facebook, twitter {
+    &--#{$icon} {
+      background-image: url("../img/icon-#{$icon}.svg");
+    }
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 1;
+  }
+}
+
+.card__buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-right: 4px;
+  padding-left: 4px;
+
+  .page--review & {
+    justify-content: center;
+  }
+
+  @media (min-width: $widthMobileIphone) {
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+
+  @media (min-width: $widthTablet) {
+    margin-top: 0;
+    padding: 0;
+
+    .page--review & {
+      display: none;
+    }
+  }
+}
+
+.card__share {
+  position: relative;
+  display: none;
+
+  @media (min-width: $widthTablet) {
+    padding: 0 26px 40px 34px;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: 95px;
+      height: 79px;
+      background: url("../img/arrow.svg") center / contain no-repeat;
+    }
+
+    &::before {
+      top: 15px;
+      right: 193px;
+    }
+
+    &::after {
+      bottom: -26px;
+      left: 73px;
+      transform: rotate(180deg);
+    }
+
+    &--shown {
+      display: flex;
+      animation: 0.3s both fade-in;
+    }
+  }
+}
+
+.card__share-person {
+  display: flex;
+  flex-direction: column;
+  width: 248px;
+  height: 254px;
+  overflow: hidden;
+  background-color: $ColorPrimary;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.13);
+}
+
+.card__share-photo {
+  width: 248px;
+  height: 187px;
+  background-position: center;
+  background-size: cover;
+}
+
+.card__share-name {
+  margin: 0;
+  margin-top: 10px;
+  margin-left: 19px;
+  font: $fontHeavy #{$fontTextLarge}/#{$lineHeightH3} $fontThird;
+  color: $fontColorHeadersBlack;
+}
+
+.card__share-occupation {
+  margin: 0;
+  margin-top: 6px;
+  margin-left: 19px;
+  font: #{$fontTextSmall}/#{$lineHeightSmall} $fontThird;
+  color: $fontColorPlaceholder;
+}
+
+.card__share-placeholder {
+  position: relative;
+  transform: translate(-102px, 107px);
+
+  img {
+    display: block;
+    width: 297px;
+  }
+}

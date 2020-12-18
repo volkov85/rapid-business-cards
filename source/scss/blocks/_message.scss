@@ -1,0 +1,242 @@
+.message {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+
+  &--shared {
+    margin: auto;
+
+    .message__animation {
+      margin-bottom: 0;
+    }
+
+    .message__title {
+      margin-bottom: 0;
+    }
+  }
+
+  @media (min-width: $widthMobileIphone) {
+    &--shared {
+      max-height: 547px;
+
+      .message__animation {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  @media (min-width: $widthTablet) {
+    justify-content: center;
+    padding-right: 33px;
+    padding-left: 38px;
+
+    &--shared {
+      max-height: none;
+      // margin-bottom: 0;
+      padding-right: 18px;
+    }
+  }
+}
+
+.message__mobile {
+  display: none;
+  min-height: 157px;
+  margin: 0;
+
+  &--v1 {
+    .button {
+      width: 160px;
+    }
+  }
+
+  &--v2 {
+    .button {
+      width: 120px;
+    }
+  }
+
+  &--shown {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @media (min-width: $widthMobileIphone) {
+    min-height: 180px;
+  }
+
+  @media (min-width: $widthTablet) {
+    display: none;
+  }
+}
+
+.message__title {
+  margin: 0;
+  margin-bottom: 12px;
+  font: $fontHeavy #{$fontHeadersH2}/#{$lineHeightH2} $fontThird;
+  text-align: center;
+  color: $fontColorHeadersBlack;
+
+  .message--shared & {
+    margin-bottom: 2px;
+  }
+
+  @media (min-width: $widthMobileIphone) {
+    font-size: $fontHeadersH1;
+    line-height: $lineHeightH1;
+
+    .message--shared & {
+      margin-bottom: 12px;
+    }
+  }
+
+  @media (min-width: $widthTablet) {
+    margin-bottom: 60px;
+    color: $fontColorHeaders;
+    text-align: left;
+
+    .message--shared & {
+      margin-bottom: 60px;
+    }
+  }
+}
+
+.message__content {
+  display: none;
+  text-align: center;
+
+  &--shown {
+    display: block;
+  }
+
+  @media (min-width: $widthTablet) {
+    width: 490px;
+    text-align: left;
+
+    .message--shared & {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+.message__text {
+  margin: 0;
+  margin-bottom: 12px;
+  font: #{$fontTextMedium}/#{$lineHeightHuge} $fontSecondary;
+  text-align: center;
+  color: $fontColorHeadersBlack;
+
+  .message--shared & {
+    margin-bottom: 9px;
+
+    @media (min-width: $widthMobileIphone) {
+      margin-bottom: 15px;
+    }
+  }
+
+  @media (min-width: $widthTablet) {
+    margin-bottom: 24px;
+    font-size: $fontTextLarge;
+    line-height: $lineHeightH3;
+    color: $fontColorHeaders;
+    text-align: left;
+
+    .message--shared & {
+      margin-bottom: 24px;
+    }
+  }
+}
+
+.message__animation {
+  position: relative;
+  z-index: -1;
+  display: none;
+  margin-top: -48px;
+
+  &--shown {
+    display: block;
+  }
+
+  .message--shared & {
+    margin-top: 0;
+    // margin-bottom: 26px;
+  }
+
+  @media (min-width: $widthMobileIphone) {
+    margin-top: -34px;
+
+    .message--shared & {
+      width: 263px;
+      height: 263px;
+    }
+  }
+
+  @media (min-width: $widthTablet) {
+    margin-top: 40px;
+
+    .message--shared & {
+      width: 400px;
+      height: 400px;
+      margin-top: 0;
+      margin-bottom: 0;
+
+      img {
+        width: 400px;
+        height: 400px;
+      }
+    }
+  }
+
+  @media (orientation: landscape) and (min-width: $widthDesktop) {
+    margin-top: -107px;
+  }
+}
+
+.message__desktop {
+  display: none;
+
+  @media (min-width: $widthTablet) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 86px;
+
+    .message--shared & {
+      align-items: center;
+      margin-bottom: 50px;
+    }
+  }
+
+  @media (orientation: landscape) and (min-width: $widthDesktop) {
+    flex-direction: row;
+    align-items: normal;
+  }
+}
+
+.message__badges {
+  display: flex;
+  justify-content: space-between;
+  width: 280px;
+}
+
+.message__badge {
+  transition:
+    filter 0.3s,
+    transform 0.3s;
+
+  img {
+    display: block;
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+    filter: drop-shadow(2px 12px 15px rgba($fontColorHeadersBlack, 0.2));
+  }
+
+  &:active {
+    filter: none;
+    transform: translate(1px, 1px);
+  }
+}
